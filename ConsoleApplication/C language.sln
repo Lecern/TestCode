@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleApplication", "ConsoleApplication\ConsoleApplication.vcxproj", "{540A96AB-B21B-4994-BB2A-09265979A35D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "C language", "ConsoleApplication\ConsoleApplication.vcxproj", "{540A96AB-B21B-4994-BB2A-09265979A35D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void main() {
+//void main() {
 	/*int a = 101;
 	int *b = &a;
 	int **c = &b;
@@ -36,18 +36,18 @@ void main() {
 // 	void printArray(int a[], int n);
 // 	printArray(a, 5);
 
-	char c[] = "computer";
-	int n = 3;
+// 	char c[] = "computer";
+// 	int n = 3;
 // 	void charPointer(char c[], int n);
 // 	charPointer(c, n);
-	char *p = c;
-	if (strlen(c) >= n) {
-		p += n - 1;
-	}
-	for (int i = 0; i <= strlen(c) - n;i++) {
-		printf("%c\n", *(p+i));
-	}
-}
+// 	char *p = c;
+// 	if (strlen(c) >= n) {
+// 		p += n - 1;
+// 	}
+// 	for (int i = 0; i <= strlen(c) - n;i++) {
+// 		printf("%c\n", *(p+i));
+// 	}
+// }
 
 //只改变形参
 void swap1(int *a, int *b) {

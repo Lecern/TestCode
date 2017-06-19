@@ -3,9 +3,10 @@
 
 #define MaxSize 5
 
+typedef int ElemType;
 //线性表顺序存储类型
 typedef struct {
-	int data[MaxSize];
+	ElemType data[MaxSize];
 	int length;
 }List;
 
@@ -56,27 +57,27 @@ int delete(List *p, int n) {
 	return 1;
 }
 
-void main() {
-	List *MakeEmpty();
-	List *pList = MakeEmpty();
-	pList->length = 10;
-	int temp[] = {6, 7, -11, 90, 0};
-	memcpy(pList->data, temp, sizeof(temp));
-// 	for (int i = 0; i < pList->length; i++)
-// 	{
-// 		pList->data[i] = i + 1;
-// 	}
-	//int Find(List *pList, int a);
-	//printf("%d\n", Find(pList, 1));
-// 	int insert(List *p, int n, int num);
-// 	insert(pList, 1, 999);
-	int delete(List *p, int n);
-	delete(pList, 3);
-	for (int i = 0; i < pList->length; i++) {
-		printf("%d,", pList->data[i]);
-		if (i == pList->length - 1) {
-			putchar('\n');
-		}
-	}
-	printf("%d\n", pList->length);
-}
+//void main() {
+//	List *MakeEmpty();
+//	List *pList = MakeEmpty();
+//	pList->length = 10;
+//	int temp[] = {6, 7, -11, 90, 0};
+//	memcpy(pList->data, temp, sizeof(temp));
+//// 	for (int i = 0; i < pList->length; i++)
+//// 	{
+//// 		pList->data[i] = i + 1;
+//// 	}
+//	//int Find(List *pList, int a);
+//	//printf("%d\n", Find(pList, 1));
+//// 	int insert(List *p, int n, int num);
+//// 	insert(pList, 1, 999);
+//	int delete(List *p, int n);
+//	delete(pList, 3);
+//	for (int i = 0; i < pList->length; i++) {
+//		printf("%d,", pList->data[i]);
+//		if (i == pList->length - 1) {
+//			putchar('\n');
+//		}
+//	}
+//	printf("%d\n", pList->length);
+//}

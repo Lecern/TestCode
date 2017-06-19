@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef int ElemType;
 typedef struct {
@@ -8,7 +9,7 @@ typedef struct {
 
 //求表长
 //pl为头指针 不可乱动
-int Length(LinkList pl) {
+int LinkListLength(LinkList pl) {
 	LinkList p = pl;
 	if (!p || !p->next){
 		printf("空");
@@ -59,11 +60,17 @@ LinkList getElemByValue(LinkList pl, ElemType value) {
 }
 
 //插入
-int insert(LinkList pl, ElemType x, int n) {
+LinkList insertLinkList(LinkList pl, ElemType x, int n) {
 	LinkList p = pl;
 	LinkList q;//指向插入节点
+	if (n == 1) {  //对插入到第一项特殊处理
+		q = (LinkList)malloc(sizeof(Node));
+		q->data = x;
+		q->next = pl;
+		return q;
+	}
 	int i = 1;
-	while (p != NULL && i < n ){
+	while (p != NULL && i < n - 1){
 		p = p->next;
 		i++;
 	}
@@ -72,8 +79,29 @@ int insert(LinkList pl, ElemType x, int n) {
 		q->data = x;
 		q->next = p->next;
 		p->next = q;
+		return pl;
 	}
 	else {
 		return NULL;
+	}
+}
+
+LinkList deleteLinkList(LinkList pl, int n) {
+	LinkList p, q;
+	p = getElemByPosition2(pl, n-1);
+	if (p->next != NULL){
+		q = p->next;
+		p->next = q->next;
+		free(q);
+	}
+}
+
+int main() {
+	LinkList pl = (LinkList)malloc(sizeof(Node));
+	LinkList insertLinkList(LinkList pl, ElemType x, int n);
+	for (int i = 0; i < 5; i++){
+		int a;
+		scanf("%d", &a);
+		insertLinkList(pl, a, i + 1);
 	}
 }

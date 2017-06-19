@@ -140,6 +140,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="LinkedList.c" />
     <ClCompile Include="Pointer.c" />
     <ClCompile Include="SequenceList.c" />
   </ItemGroup>

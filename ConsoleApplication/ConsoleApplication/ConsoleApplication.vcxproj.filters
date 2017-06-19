@@ -21,5 +21,8 @@
     <ClCompile Include="SequenceList.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="LinkedList.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

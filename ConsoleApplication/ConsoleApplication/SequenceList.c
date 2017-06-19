@@ -1,6 +1,7 @@
 #include <stdio.h>
+#include <string.h>
 
-#define MaxSize 11
+#define MaxSize 5
 
 //线性表顺序存储类型
 typedef struct {
@@ -59,10 +60,12 @@ void main() {
 	List *MakeEmpty();
 	List *pList = MakeEmpty();
 	pList->length = 10;
-	for (int i = 0; i < pList->length; i++)
-	{
-		pList->data[i] = i + 1;
-	}
+	int temp[] = {6, 7, -11, 90, 0};
+	memcpy(pList->data, temp, sizeof(temp));
+// 	for (int i = 0; i < pList->length; i++)
+// 	{
+// 		pList->data[i] = i + 1;
+// 	}
 	//int Find(List *pList, int a);
 	//printf("%d\n", Find(pList, 1));
 // 	int insert(List *p, int n, int num);

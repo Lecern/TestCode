@@ -8,23 +8,23 @@ typedef struct {
 	struct Node *next;
 }Node, *LinkList;
 
-//æ±‚è¡¨é•¿
-//plä¸ºå¤´æŒ‡é’ˆ ä¸å¯ä¹±åŠ¨
+//Çó±í³¤
+//plÎªÍ·Ö¸Õë ²»¿ÉÂÒ¶¯
 int LinkListLength(LinkList pl) {
 	LinkList p = pl;
 	if (!p || !p->next){
-		printf("ç©º");
+		printf("¿Õ");
 		return 0;
 	}
 	int length = 0;
 	while (p->next){
-		length++;
-		p = p->next;
+        p = p->next;
+        length++;
 	}
 	return length;
 }
 
-//æŒ‰åºå·æŸ¥æ‰¾
+//°´ĞòºÅ²éÕÒ
 LinkList getElemByPosition(LinkList *pl, int n) {
 	LinkList p = pl;
 	for (int i = 0; i < n; i++){
@@ -51,7 +51,7 @@ LinkList getElemByPosition2(LinkList pl, int n) {
 		return NULL;
 }
 
-//æŒ‰å€¼æŸ¥æ‰¾
+//°´Öµ²éÕÒ
 LinkList getElemByValue(LinkList pl, ElemType value) {
 	LinkList p = pl;
 	while (p != NULL && p->data != value){
@@ -60,11 +60,11 @@ LinkList getElemByValue(LinkList pl, ElemType value) {
 	return p;
 }
 
-//æ’å…¥
+//²åÈë
 LinkList insertLinkList(LinkList pl, ElemType x, int n) {
 	LinkList p = pl;
-	LinkList q;//æŒ‡å‘æ’å…¥èŠ‚ç‚¹
-	if (n == 1) {  //å¯¹æ’å…¥åˆ°ç¬¬ä¸€é¡¹ç‰¹æ®Šå¤„ç†
+	LinkList q;//Ö¸Ïò²åÈë½Úµã
+	if (n == 1) {  //¶Ô²åÈëµ½µÚÒ»ÏîÌØÊâ´¦Àí
 		q = (LinkList)malloc(sizeof(Node));
 		q->data = x;
 		q->next = pl;
@@ -75,7 +75,7 @@ LinkList insertLinkList(LinkList pl, ElemType x, int n) {
 		p = p->next;
 		i++;
 	}
-	if (i == n) {
+	if (i == n - 1) {
 		q = (LinkList)malloc(sizeof(Node));
 		q->data = x;
 		q->next = p->next;
@@ -100,29 +100,38 @@ LinkList deleteLinkList(LinkList pl, int n) {
 LinkList createLinkList(int n) {
 	LinkList q,s;
 	LinkList pl = (LinkList)malloc(sizeof(Node));
-	s = pl; //sæŒ‡å‘å°¾éƒ¨
+	s = pl; //sÖ¸ÏòÎ²²¿
 	srand(time(0));
 	for (int i = 0; i < n; i++){
 		q = (LinkList)malloc(sizeof(Node));
-		q->data = rand() % 100 + 1;
+		//q->data = rand() % 100 + 1;
+        q->data = i + 1;
 		s->next = q;
 		s = q;
 	}
-	s->next = NULL;
-	return pl;
+    s->next = NULL;
+    return pl;
 }
 
 LinkList createLinkList(int n);
 int LinkListLength(LinkList pl) ;
+LinkList insertLinkList(LinkList pl, ElemType x, int n);
+LinkList getElemByPosition2(LinkList pl, int n);
 
 int main() {
     LinkList L = createLinkList(8);
     LinkList p = L;
+//    LinkList q = getElemByPosition2(L, 3);
+//    printf("µÚÈı¸ö:%d\n",q->data);
+    L = insertLinkList(L, 99999, 3);
+    int length = LinkListLength(L);
+    L->data = length;
     while (p->next != NULL)
     {
         printf("%d\n",p->data);
         p = p->next;
     }
-    int length = LinkListLength(L);
     printf("length:%d\n", length);
+    system("PAUSE");
+    return 0;
 }

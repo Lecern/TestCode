@@ -4,13 +4,13 @@
 #define MaxSize 5
 
 typedef int ElemType;
-//ÏßĞÔ±íË³Ğò´æ´¢ÀàĞÍ
+//çº¿æ€§è¡¨é¡ºåºå­˜å‚¨ç±»å‹
 typedef struct {
 	ElemType data[MaxSize];
 	int length;
 }List;
 
-//³õÊ¼»¯(½¨Á¢¿ÕµÄË³Ğò±í)
+//åˆå§‹åŒ–(å»ºç«‹ç©ºçš„é¡ºåºè¡¨)
 List *MakeEmpty() {
 	List *pList;
 	pList = (List *)malloc(sizeof(List));
@@ -18,7 +18,7 @@ List *MakeEmpty() {
 	return pList;
 }
 
-//°´Öµ²éÕÒ
+//æŒ‰å€¼æŸ¥æ‰¾
 int Find(List *pList, int a) {
 	int position = -1;
 	for (int i = 0; i <= pList->length; i++){
@@ -30,10 +30,10 @@ int Find(List *pList, int a) {
 	return position;
 }
 
-//²åÈë
+//æ’å…¥
 int insert(List *p, int n, int num) {
 	if (n <= 0 || n > p->length + 1) {
-		printf("·Ç·¨Êı×Ö!\n");
+		printf("éæ³•æ•°å­—!\n");
 		return 0;
 	}
 	for (int i = p->length - 1; i >= n -1 ; i--) {
@@ -44,10 +44,10 @@ int insert(List *p, int n, int num) {
 	return 1;
 }
 
-//É¾³ı
+//åˆ é™¤
 int delete(List *p, int n) {
 	if (n <= 0 || n >= p->length + 1) {
-		printf("·Ç·¨Êı×Ö!");
+		printf("éæ³•æ•°å­—!");
 		return 0;
 	}
 	for (int i = n; i < p->length; i++) {

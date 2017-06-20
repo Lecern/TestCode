@@ -7,12 +7,12 @@ typedef struct {
 	struct Node *next;
 }Node, *LinkList;
 
-//Çó±í³¤
-//plÎªÍ·Ö¸Õë ²»¿ÉÂÒ¶¯
+//æ±‚è¡¨é•¿
+//plä¸ºå¤´æŒ‡é’ˆ ä¸å¯ä¹±åŠ¨
 int LinkListLength(LinkList pl) {
 	LinkList p = pl;
 	if (!p || !p->next){
-		printf("¿Õ");
+		printf("ç©º");
 		return 0;
 	}
 	int length = 0;
@@ -23,7 +23,7 @@ int LinkListLength(LinkList pl) {
 	return length;
 }
 
-//°´ĞòºÅ²éÕÒ
+//æŒ‰åºå·æŸ¥æ‰¾
 LinkList getElemByPosition(LinkList pl, int n) {
 	LinkList p = pl;
 	for (int i = 0; i < n; i++){
@@ -50,7 +50,7 @@ LinkList getElemByPosition2(LinkList pl, int n) {
 		return NULL;
 }
 
-//°´Öµ²éÕÒ
+//æŒ‰å€¼æŸ¥æ‰¾
 LinkList getElemByValue(LinkList pl, ElemType value) {
 	LinkList p = pl;
 	while (p != NULL && p->data != value){
@@ -59,11 +59,11 @@ LinkList getElemByValue(LinkList pl, ElemType value) {
 	return p;
 }
 
-//²åÈë
+//æ’å…¥
 LinkList insertLinkList(LinkList pl, ElemType x, int n) {
 	LinkList p = pl;
-	LinkList q;//Ö¸Ïò²åÈë½Úµã
-	if (n == 1) {  //¶Ô²åÈëµ½µÚÒ»ÏîÌØÊâ´¦Àí
+	LinkList q;//æŒ‡å‘æ’å…¥èŠ‚ç‚¹
+	if (n == 1) {  //å¯¹æ’å…¥åˆ°ç¬¬ä¸€é¡¹ç‰¹æ®Šå¤„ç†
 		q = (LinkList)malloc(sizeof(Node));
 		q->data = x;
 		q->next = pl;
@@ -99,7 +99,7 @@ LinkList deleteLinkList(LinkList pl, int n) {
 LinkList createLinkList(int n) {
 	LinkList q,s;
 	LinkList pl = (LinkList)malloc(sizeof(Node));
-	s = pl; //sÖ¸ÏòÎ²²¿
+	s = pl; //sæŒ‡å‘å°¾éƒ¨
 	srand(time(0));
 	for (int i = 0; i < n; i++){
 		q = (LinkList)malloc(sizeof(Node));

@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 typedef int ElemType;
 typedef struct {
@@ -24,7 +25,7 @@ int LinkListLength(LinkList pl) {
 }
 
 //按序号查找
-LinkList getElemByPosition(LinkList pl, int n) {
+LinkList getElemByPosition(LinkList *pl, int n) {
 	LinkList p = pl;
 	for (int i = 0; i < n; i++){
 		if (p->next) {
@@ -111,18 +112,17 @@ LinkList createLinkList(int n) {
 	return pl;
 }
 
+LinkList createLinkList(int n);
+int LinkListLength(LinkList pl) ;
+
 int main() {
-	/*LinkList pl = (LinkList)malloc(sizeof(Node));
-	LinkList insertLinkList(LinkList pl, ElemType x, int n);
-	for (int i = 0; i < 5; i++){
-		int a;
-		scanf("%d", &a);
-		insertLinkList(pl, a, i + 1);
-	}*/
-	LinkList createLinkList(int n);
-	LinkList L = createLinkList(3);
-	while (L->next != NULL)
-	{
-		printf("%d\n",L->data);
-	}
+    LinkList L = createLinkList(8);
+    LinkList p = L;
+    while (p->next != NULL)
+    {
+        printf("%d\n",p->data);
+        p = p->next;
+    }
+    int length = LinkListLength(L);
+    printf("length:%d\n", length);
 }

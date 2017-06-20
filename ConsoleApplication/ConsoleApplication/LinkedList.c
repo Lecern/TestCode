@@ -96,12 +96,33 @@ LinkList deleteLinkList(LinkList pl, int n) {
 	}
 }
 
-int main() {
+LinkList createLinkList(int n) {
+	LinkList q,s;
 	LinkList pl = (LinkList)malloc(sizeof(Node));
+	s = pl; //s÷∏œÚŒ≤≤ø
+	srand(time(0));
+	for (int i = 0; i < n; i++){
+		q = (LinkList)malloc(sizeof(Node));
+		q->data = rand() % 100 + 1;
+		s->next = q;
+		s = q;
+	}
+	s->next = NULL;
+	return pl;
+}
+
+int main() {
+	/*LinkList pl = (LinkList)malloc(sizeof(Node));
 	LinkList insertLinkList(LinkList pl, ElemType x, int n);
 	for (int i = 0; i < 5; i++){
 		int a;
 		scanf("%d", &a);
 		insertLinkList(pl, a, i + 1);
+	}*/
+	LinkList createLinkList(int n);
+	LinkList L = createLinkList(3);
+	while (L->next != NULL)
+	{
+		printf("%d\n",L->data);
 	}
 }

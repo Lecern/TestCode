@@ -28,15 +28,17 @@ int PushLinkStack(LinkStack q, ElemType x) {
     return 1;
 }
 
+//出栈
+//类同于链表中删除节点操作
 ElemType PopLinkStack(LinkStack q) {
     if (q->next == NULL) {
         printf("栈空");
         return 0;
     }
-    LinkStack first = q->next;
-    ElemType result = first->data;
-    q->next = first->next;
-    free(first);
+    LinkStack top = q->next;
+    ElemType result = top->data;
+    q->next = top->next;
+    free(top);
     return result;
 }
 LinkStack CreateLinkStack();

@@ -128,8 +128,8 @@ int main() {
     L->data = length;
     while (p->next != NULL)
     {
-        printf("%d\n",p->data);
         p = p->next;
+        printf("%d\n",p->data);
     }
     printf("length:%d\n", length);
     system("PAUSE");

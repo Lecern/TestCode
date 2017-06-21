@@ -3,5 +3,5 @@ project(TestCode)
 
 set(CMAKE_C_STANDARD 99)
 
-set(SOURCE_FILES List/SequenceList.c List/LinkedList.c Stack/Stack.c)
+set(SOURCE_FILES Stack/LinkStack.c)
 add_executable(TestCode ${SOURCE_FILES})

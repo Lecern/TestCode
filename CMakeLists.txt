@@ -3,5 +3,5 @@ project(TestCode)
 
 set(CMAKE_C_STANDARD 99)
 
-set(SOURCE_FILES Queue/CycleQueue.c)
+set(SOURCE_FILES Queue/LinkQueue.c)
 add_executable(TestCode ${SOURCE_FILES})

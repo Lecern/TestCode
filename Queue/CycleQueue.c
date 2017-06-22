@@ -31,3 +31,11 @@ ElemType DeCycleQueue(CycleQueue q) {
     q->front = (q->front + 1) % MaxSize;
     return q->data[q->front];
 }
+
+void InitCycleQueue(CycleQueue q) {
+    q->front = q->rear = -1;
+}
+
+int CycleQueueLength(CycleQueue q) {
+    return (MaxSize - q->front + q->rear) % MaxSize;
+}

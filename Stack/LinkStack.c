@@ -12,7 +12,6 @@ typedef struct {
     struct Node *next;
 }Node, *LinkStack;
 
-
 //≥ı ºªØ¡¥’ª
 LinkStack CreateLinkStack() {
     LinkStack s = (LinkStack)malloc(sizeof(Node));

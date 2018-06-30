@@ -8,11 +8,12 @@ int InsertSort(int array[], int length) {
         return 0;
     int p = array[0];
     for (int i = 1; i < length; i++) {
+        int j;
         int temp = array[i];
-        for (int j = i; j > 0 && array[j-1] > array[i] ; j--) {
+        for (j = i; j > 0 && array[j-1] > temp ; j--) {
             array[j] = array[j-1];
-            array[j-1] = temp;
         }
+        array[j] = temp;
     }
     return 1;
 }

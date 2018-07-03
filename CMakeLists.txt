@@ -3,5 +3,5 @@ project(TestCode)
 
 set(CMAKE_C_STANDARD 99)
 
-set(SOURCE_FILES main.c Sorting/BubbleSort.c Sorting/InsertSort.c)
+set(SOURCE_FILES main.c Sorting/BubbleSort.c Sorting/InsertSort.c Sorting/QuickSort.c)
 add_executable(TestCode ${SOURCE_FILES})
